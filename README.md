@@ -1,7 +1,7 @@
 # Django Pastebin
 A simple pastebin.
 
-<img src="images/image1.png" width="430">
+<img src="images/image1.png">
 
 ## Descrition
 A simple, open source pastebin based on python3 and django.  
