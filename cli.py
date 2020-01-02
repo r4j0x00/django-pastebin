@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from argparse import *
 from requests import post, get
 from os import path
@@ -13,14 +14,14 @@ def main():
 	    Cli For Pastebin Flask.
 	    syntax highlighting is optional and is automatically chosen if file has extension.""")
 	parser.add_argument('-f','--file', help='File To Post')
-	parser.add_argument('-l', '--language', help='Language for syntax highlight')
-	parser.add_argument('-d', '--disablesyntax', action='store_true', help='disable syntax higlight')
+	parser.add_argument('-l', '--language', help='Language for syntax highlighting')
+	parser.add_argument('-d', '--disablesyntax', action='store_true', help='disable syntax higlighting')
 	parser.add_argument('-s', '--showlanguages', action='store_true', help='Languages Available for syntax highlighting')
-	parser.add_argument('-H','--host', help='Default localhost',default='127.0.0.1')
+	parser.add_argument('-H','--host', help='Default django-pastebin.herokuapp.com',default='django-pastebin.herokuapp.com')
 	parser.add_argument('-p','--port', help='Default port 80',default='80')
 	args = parser.parse_args()
 
-	host = "http://{}:{}/".format(args.host,args.port)
+	host = f"http://{args.host}:{args.port}/"
 	langs = ['python', 'javascript', 'c', 'ruby', 'perl', 'php', 'css', 'html']
 
 	if args.showlanguages:
