@@ -1,0 +1,100 @@
+{% include 'header.html' %}
+
+{% load static %}
+<body background="{% static "back.gif" %}">
+<style>
+    .code_frame2 {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 0 0 10px;
+    }
+    .center{
+    margin: auto;
+    width: 65%;
+    height: fit-content;
+    min-height: 770px;
+    background: #272822;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 10px;
+    color: white;
+    }
+    .code_frame {
+    /*background-color: #fff;*/
+    color: white;
+    font-size: 12px;
+    overflow: auto;
+    padding: 0;
+    }
+    .code_buttons {
+    font-size: .85em;
+    text-align: left;
+    padding: 6px 8px 4px;
+    }
+    div {
+        overflow-wrap: break-word;
+    }
+    .text .de1, .text .de2 {
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    margin: 0;
+    padding: 0 8px;
+    background: none;
+    vertical-align: top;
+    color: #000;
+    border-left: 1px solid #ddd;
+    margin: 0 0 0 -7px;
+    position: relative;
+    background: #ffffff;
+    }
+    .go_right {
+    float: right;
+    text-align: right;
+    }
+    .text {
+    color: #ACACAC;
+    }
+.bt {
+  background-color: transparent;
+  color: #39FF14;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  border: 1px solid #39FF14;
+}
+    @media screen and (max-width: 500px) {
+    .center {
+      width: 100%;
+    }
+    }
+    .buttonsm{background-color:#ddd;border-bottom:2px solid #ccc;border-left:0;border-radius:3px;border-right:0;border-top:0;color:#000;cursor:pointer;display:inline-block;font-family:"segoe ui","trebuchet MS","Lucida Sans Unicode","Lucida Sans",Sans-Serif;font-size:12px;font-weight:400;height:18px;line-height:18px;text-align:center;text-decoration:none;-moz-appearance:none;-webkit-appearance:none;padding:0 6px;opacity:.75;margin:0 0 0 8px}
+</style>
+<div class="center">
+<h2>Data</h2>
+<div id="code_frame2">
+<div id="code_frame">
+<div class="code_buttons">
+    <span class="go_right">
+            <a class="bt" href="/raw/{{ url }}" >raw</a>
+            <a class="bt" href="/dl/{{ url }}" >download</a>
+    </span>
+    {{size}}
+</div>
+<br>
+<hr color="#39FF14">
+<div id="selectable">
+<pre>
+<code class="language-{{lang}}">
+{{paste| safe}}
+</code>
+</pre>
+</div>
+</div>
+</div>
+</div>
+{% include 'footer.html' %}
+</body>
