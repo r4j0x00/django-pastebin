@@ -18,6 +18,11 @@ It also comes with a tool which can be used to directly upload pastes through co
 root@kali:~/django-pastebin# pip3 install -r requirements.txt
 ```
 
+## Built with
+* [Python3](https://github.com/python/cpython)
+* [Django](https://github.com/django/django)
+* [Postgresql](https://www.postgresql.org/)
+
 ## Database
 This project can be used with both mysql and postgresql.
 ### Mysql setup
@@ -64,4 +69,9 @@ DATABASES = {
         'PORT': '',
     }
 }
+```
+
+## Deployment
+```console
+root@kali:~/django-pastebin# python3 manage.py runserver
 ```
