@@ -42,3 +42,26 @@ DATABASES = {
     }
 }
 ```
+### Postgresql setup
+```
+create database pastebin;
+create user user with password 'password';
+alter role user set client_encoding TO 'utf8';
+alter role user set default_transaction_isolation to 'read committed';
+alter role user set timezone TO 'UTC';
+grant all privileges on database pastebin to user;
+exit
+```
+settings.py
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'pastebin',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+```
