@@ -1,5 +1,5 @@
 # Django Pastebin
-A simple pastebin.
+*A simple pastebin.*
 
 <img src="images/image2.png">
 <img src="images/image1.png">
