@@ -11,3 +11,9 @@ It also comes with a tool which can be used to directly upload pastes through co
 
 ## Cli tool
 [![asciicast](https://asciinema.org/a/R1a62ZUNhZRwdeXggjHzLuvj8.png)](https://asciinema.org/a/R1a62ZUNhZRwdeXggjHzLuvj8)
+
+
+## Prerequisites
+```
+pip3 install -r requirements.txt
+```
