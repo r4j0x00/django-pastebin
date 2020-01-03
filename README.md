@@ -14,14 +14,14 @@ It also comes with a tool which can be used to directly upload pastes through co
 
 
 ## Prerequisites
-```
+```bash
 pip3 install -r requirements.txt
 ```
 
 ## Database
 This project can be used with both mysql and postgresql.
 ### Mysql setup
-```
+```sql
 create database pastebin;
 grant all privileges on pastebin.* to 'user'@'localhost' identified by 'password';
 flush privileges;
@@ -30,7 +30,7 @@ create table pastes ( url varchar(40), data text, lang varchar(40) );
 exit;
 ```
 settings.py
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -43,7 +43,7 @@ DATABASES = {
 }
 ```
 ### Postgresql setup
-```
+```sql
 create database pastebin;
 create user user with password 'password';
 alter role user set client_encoding TO 'utf8';
@@ -53,7 +53,7 @@ grant all privileges on database pastebin to user;
 exit
 ```
 settings.py
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
