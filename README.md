@@ -14,8 +14,8 @@ It also comes with a tool which can be used to directly upload pastes through co
 
 
 ## Prerequisites
-```bash
-pip3 install -r requirements.txt
+```console
+root@kali:~/django-pastebin# pip3 install -r requirements.txt
 ```
 
 ## Database
