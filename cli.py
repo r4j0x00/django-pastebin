@@ -11,7 +11,7 @@ def get_lang_name(extension):
 def main():
 	parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
 	description="""\
-	    Cli For Pastebin Flask.
+	    Cli For Pastebin Django.
 	    syntax highlighting is optional and is automatically chosen if file has extension.""")
 	parser.add_argument('-f','--file', help='File To Post')
 	parser.add_argument('-l', '--language', help='Language for syntax highlighting')
