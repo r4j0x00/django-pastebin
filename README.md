@@ -17,3 +17,15 @@ It also comes with a tool which can be used to directly upload pastes through co
 ```
 pip3 install -r requirements.txt
 ```
+
+## Database
+This project can be used with both mysql and postgresql.
+### Mysql setup
+```
+create database pastebin;
+grant all privileges on pastebin.* to 'user'@'localhost' identified by 'password';
+flush privileges;
+use pastebin;
+create table pastes ( url varchar(40), data text, lang varchar(40) );
+exit;
+```
