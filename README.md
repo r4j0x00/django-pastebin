@@ -29,3 +29,16 @@ use pastebin;
 create table pastes ( url varchar(40), data text, lang varchar(40) );
 exit;
 ```
+settings.py
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pastebin',
+        'USER': 'user',
+        'PASSWORD': 'password',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+```
