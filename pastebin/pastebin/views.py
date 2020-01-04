@@ -61,6 +61,15 @@ def paste(request,name):
     size = convert_size(getsizeof(cont))
     return render(request, 'paste.html', {'paste':cont, 'url':name,'size':size,'lang':lang})
 
+def view(request):
+    if request.method == 'POST':
+        paste_id = request.POST['id']
+        if not len(sql_get("select lang from pastes where url=%s",paste_id)):
+            return render(request,'view.html',{'msg':'Paste not found'})
+        return HttpResponse(f'<script>document.location="/{paste_id}";</script>')
+    return render(request,'view.html')
+
+
 def raw(request,name):
     content = sql_get("select data from pastes where url=%s",name)
     if len(content) == 0:

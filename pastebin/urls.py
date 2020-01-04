@@ -5,6 +5,7 @@ from .pastebin import views
 
 urlpatterns = [
     path('',views.main),
+    path('view',views.view),
     path('<name>',views.paste),
     path('raw/<name>',views.raw),
     path('dl/<name>',views.download),

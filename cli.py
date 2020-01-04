@@ -13,7 +13,7 @@ def main():
 	description="""\
 	    Cli For Pastebin Flask.
 	    syntax highlighting is optional and is automatically chosen if file has extension.""")
-	parser.add_argument('-f','--file', help='File To Post')
+	parser.add_argument('file', help='File To Post')
 	parser.add_argument('-l', '--language', help='Language for syntax highlighting')
 	parser.add_argument('-d', '--disablesyntax', action='store_true', help='disable syntax higlighting')
 	parser.add_argument('-s', '--showlanguages', action='store_true', help='Languages Available for syntax highlighting')
@@ -50,10 +50,9 @@ def main():
 		if lang != None:
 			print ("[+] Highlighting Syntax for "+lang)
 			r = post(host, data={"cont":file_data, "lang":str(lang)})
-	else:
-		file_data = open(args.file, 'r').read()
-		r = post(host, data={"cont":file_data, "lang":"None"})
-
+		else:
+			file_data = open(args.file, 'r').read()
+			r = post(host, data={"cont":file_data, "lang":"None"})
 	try:
 		pasted = r.content.decode()[27:][:-11]
 		print ("[+] Link to paste: "+pasted)

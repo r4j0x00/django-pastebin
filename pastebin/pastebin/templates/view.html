@@ -1,0 +1,44 @@
+{% include 'header.html' %}
+
+{% load static %}
+
+<style>
+.body {
+  height: 100%;
+}
+.center {
+  margin: auto;
+  width: 45%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  height: 84%;
+  padding: 10px;
+  color: white;
+}
+.inp {
+	background: transparent;
+	border: 1px solid #39FF14;
+	padding: 10px 16px;
+	color: white;
+}
+.sb {
+	background: transparent;
+	border: 1px solid #39FF14;
+	color: white;
+	padding: 10px 20px;
+}
+</style>
+
+<body background="{% static "back.gif" %}">
+<div class='center'>
+	<center>
+		<form method='POST'>
+			<input type='text' name='id' class='inp'placeholder='id'> <button type='submit' class='sb'>View Paste</button>
+			<br />
+			<br />
+			<font color="red">{{ msg }}</font>
+		</form>
+	</center>
+</div>
+
+{% include 'footer.html' %}
