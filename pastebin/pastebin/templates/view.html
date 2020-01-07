@@ -20,6 +20,8 @@
 	border: 1px solid #39FF14;
 	padding: 10px 16px;
 	color: white;
+	position: relative;
+	right: 4px;
 }
 .sb {
 	background: transparent;
@@ -27,7 +29,11 @@
 	color: white;
 	padding: 10px 20px;
 }
-@media screen and (max-width: 500px) {
+.frm {
+	position: relative;
+	top: 250px;
+}
+@media screen and (max-width: 880px) {
     .center {
       width: 100%;
     }
@@ -37,12 +43,12 @@
 <body background="{% static "back.gif" %}">
 <div class='center'>
 	<center>
-		<form method='POST'>
+		<form method='POST' class='frm'>
 			<input type='text' name='id' class='inp'placeholder='id'> <button type='submit' class='sb'>View Paste</button>
-			<br />
-			<br />
-			<font color="red">{{ msg }}</font>
 		</form>
+		<br />
+		<br />
+		<font color="red">{{ msg }}</font>
 	</center>
 </div>
 
